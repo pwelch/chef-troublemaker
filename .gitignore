@@ -2,3 +2,7 @@
 .cache
 .kitchen
 bin
+tmp
+*.swp
+.DS_Store
+metadata.json
