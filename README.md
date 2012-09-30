@@ -1,3 +1,5 @@
+[![Build Status](https://secure.travis-ci.org/pwelch/chef-troublemaker.png)](http://travis-ci.org/pwelch/chef-troublemaker)
+
 ## Description
 Installs [Trouble-maker](http://trouble-maker.sourceforge.net/) which is used as a study tool for RHCE.
 
