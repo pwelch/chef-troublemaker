@@ -9,12 +9,12 @@ Vagrant::Config.run do |config|
 
   # Every Vagrant virtual environment requires a box to build off of.
   
-  config.vm.box = "opscode-centos-5.8"
+  config.vm.box = "opscode-centos-6.3"
 
   # The url from where the 'config.vm.box' box will be fetched if it
   # doesn't already exist on the user's system.
 
-  # config.vm.box_url = "https://opscode-vm.s3.amazonaws.com/vagrant/boxes/opscode-centos-5.8.box"
+  # config.vm.box_url = "https://opscode-vm.s3.amazonaws.com/vagrant/boxes/opscode-centos-6.3.box"
 
   # Boot with a GUI so you can see the screen. (Default is headless)
   # config.vm.boot_mode = :gui
@@ -36,9 +36,10 @@ Vagrant::Config.run do |config|
   
    config.vm.provision :chef_solo do |chef|
      chef.cookbooks_path = "../"
+     chef.add_recipe "troublemaker"
+
   #   chef.roles_path = "../my-recipes/roles"
   #   chef.data_bags_path = "../my-recipes/data_bags"
-     chef.add_recipe "troublemaker"
   #   chef.add_role "web"
   #
   #   # You may also specify custom JSON attributes:

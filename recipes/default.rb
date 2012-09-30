@@ -15,17 +15,20 @@
 # limitations under the License.
 #
 
+rpmforge_url      = node['rpmforge']['url']
+rpmforge_file     = node['rpmforge']['file']
+rpmforge_checksum = node['rpmforge']['checksum']
 
 remote_file "rpmforge" do
-  path Chef::Config[:file_cache_path] + "/rpmforge-release-0.3.6-1.el5.rf.i386.rpm"
-  source "http://apt.sw.be/redhat/el5/en/i386/rpmforge/RPMS/rpmforge-release-0.3.6-1.el5.rf.i386.rpm"
+  path Chef::Config[:file_cache_path] + rpmforge_file
+  source rpmforge_url + rpmforge_file
   mode "0644"
-  checksum "ca179c95eef0a6c29861579c960f4ca5c4da7d61ff387878aae2ed3089a44fd3"
+  checksum rpmforge_checksum 
 end
 
 package "rpmforge" do
   action :install
-  source Chef::Config[:file_cache_path] + "/rpmforge-release-0.3.6-1.el5.rf.i386.rpm"
+  source Chef::Config[:file_cache_path] + rpmforge_file
   provider Chef::Provider::Package::Rpm
 end
 

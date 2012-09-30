@@ -4,11 +4,12 @@ Installs [Trouble-maker](http://trouble-maker.sourceforge.net/) which is used as
 
 # WARNING - DO NOT RUN ON A PRODUCTION MACHINE
 
+
 ## Requirements
 
 * [Vagrant](http://vagrantup.com/) or a chef node you don't care about.
 
-## Platforms
+### Platforms
 Trouble-maker is targeted towards RHEL based Linux distrobutions.
 
 Cookbook tested on the following:
@@ -16,21 +17,20 @@ Cookbook tested on the following:
 * [Centos 5.8](https://opscode-vm.s3.amazonaws.com/vagrant/boxes/opscode-centos-5.8.box)
 * [Centos 6.3](https://opscode-vm.s3.amazonaws.com/vagrant/boxes/opscode-centos-6.3.box)
 
-The cookbook installs on both Centos 5.8 and Centos 6.3 but there seems to be an issue with Trouble-maker on Centos 6.3 at the moment.
-
 ## Usage
-Change to the trouble-maker cookbook directory.
 
-```bash
-vagrant up
-```
+After Installation
 
-```bash
-vagrant ssh
-```
+For Centos 5.3:
 
 ```bash
 /usr/local/trouble-maker/bin/trouble-maker.pl --version=RHEL_5
+```
+
+For Centos 6.3:
+
+```bash
+/usr/local/trouble-maker/bin/trouble-maker.pl --version=RHEL_6
 ```
 
 ## License and Author
